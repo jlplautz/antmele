@@ -20,6 +20,10 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
+
+    - name: Copying configurations
+      run: cp contrib/env-sample .env
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -37,5 +41,4 @@ jobs:
     - name: Posting Coverage
       env:
         CODECOV_TOKEN: "0390e4a0-e9d6-48ed-8272-16bc9d8b4d0a"
-      run: |
-        pytest  --cov=testing
+      run: codecov
