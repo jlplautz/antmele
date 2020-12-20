@@ -16,7 +16,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12.0
+        image: postgres:9.5
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -39,9 +39,9 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: before_script
-      run:
-       psql -c "CREATE DATABASE testdb;" -U postgres
+#    - name: before_script
+#      run:
+#       psql -c "CREATE DATABASE testdb;" -U postgres
 
     - name: Lint with flake8
       run: |
