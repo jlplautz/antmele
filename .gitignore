@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Media & static files
+staticfiles/
+mediafiles/
+
+# local posgres files
+.pgdata
